@@ -1,0 +1,103 @@
+sci-03-inventario-1   | SCI-03 Inventario listo
+sci-03-inventario-1   | GET /health 200 20.894 ms trace=e15593a6-dbf6-41f1-b9bd-ee91ff411f1c
+sci-03-inventario-1   | GET /health 200 3.348 ms trace=8a5e12b6-7c67-4f96-9283-49ac143f79e4
+sci-03-inventario-1   | GET /health 200 1.488 ms trace=6ac65f66-e504-4d3f-b729-f7d9889b04d2
+sci-03-inventario-1   | GET /health 200 2.057 ms trace=b706a95f-bce0-46e8-b2da-96de019936ea
+sci-03-inventario-1   | GET /health 200 2.171 ms trace=71a3a736-9d33-4712-bbc1-4bb06f5af645
+sci-03-inventario-1   | GET /health 200 1.476 ms trace=a3b02818-8168-41a1-b70a-77896cf03efd
+sci-03-inventario-1   | GET /health 200 1.750 ms trace=32b793c2-7e8a-4ee9-9392-db1c171cfd76
+sci-03-inventario-1   | GET /health 200 1.835 ms trace=a34f0621-09a7-4732-916b-c40cbde1ca89
+sci-03-inventario-1   | POST /api/productos 201 42.014 ms trace=ff747d66-f234-4952-b6c8-5780ad3c4f01
+sci-03-inventario-1   | PUT /api/productos/7 200 27.748 ms trace=8698449b-befe-48a7-8e55-64283d241e65
+sci-03-inventario-1   | PATCH /api/productos/7/reponer-stock 200 27.182 ms trace=90517956-0412-4b59-b514-6a5d38704972
+sci-03-inventario-1   | GET /api/productos/7 200 2.886 ms trace=9f506c90-8a70-402a-b5af-96b5abd55122
+sci-03-inventario-1   | PATCH /api/productos/7/descontar-stock 200 24.852 ms trace=9f506c90-8a70-402a-b5af-96b5abd55122
+sci-03-inventario-1   | GET /api/productos/7 200 3.684 ms trace=8ed14715-9d82-4950-a088-6b2a3d6e296d
+sci-03-inventario-1   | GET /api/productos/7 200 2.835 ms trace=bd26b812-2bac-4bf5-8191-e6d85089fd4e
+sci-03-inventario-1   | PATCH /api/productos/7/descontar-stock 409 7.662 ms trace=bd26b812-2bac-4bf5-8191-e6d85089fd4e
+sci-03-inventario-1   | GET /api/productos/7 200 3.470 ms trace=7667efa2-a117-4975-8934-05f5f9ad0af9
+sci-03-inventario-1   | GET /api/productos 200 4.690 ms trace=39279e65-3da2-4692-b1a6-2e06e1d1fc22
+sci-03-inventario-1   | GET /health 200 1.935 ms trace=aa8365d7-27ad-4970-afc6-ec1d814b83e4
+sci-03-inventario-1   | GET /api/productos 200 6.766 ms trace=49de0984-b9b9-465c-b50f-5ce295e725e6
+sci-03-inventario-1   | GET /api/productos 200 8.713 ms trace=6a433c93-ac4c-4b60-ae5a-f4e3d5e2d3e3
+sci-03-inventario-1   | GET /health 200 1.451 ms trace=a8487ab3-4cdf-4736-9b9c-a6027ecd373e
+sci-03-inventario-1   | GET /health 200 1.321 ms trace=8d1458e0-2499-47c7-bbbc-0159621c4eb5
+sci-03-inventario-1   | SCI-03 Inventario listo
+sci-03-inventario-1   | GET /health 200 6.756 ms trace=825e0e58-a973-456d-a278-25e781bebbff
+sci-03-inventario-1   | GET /api/productos/7 200 8.632 ms trace=989673d0-afa2-4168-a1ed-3c4cff7be9ff
+sci-03-inventario-1   | GET /health 200 1.849 ms trace=186477bb-b4f3-4ff0-9364-10c3bc59a6b2
+sci-03-inventario-1   | GET /health 200 1.852 ms trace=ac04f068-3184-4342-9128-dd635d904c65
+sci-02-api-gateway-1  | SCI-02 API Gateway listo
+sci-02-api-gateway-1  | GET /health 200 44.904 ms trace=6ac65f66-e504-4d3f-b729-f7d9889b04d2
+sci-02-api-gateway-1  | GET /health 200 21.903 ms trace=71a3a736-9d33-4712-bbc1-4bb06f5af645
+sci-02-api-gateway-1  | GET /health 200 14.084 ms trace=32b793c2-7e8a-4ee9-9392-db1c171cfd76
+sci-02-api-gateway-1  | GET /health 200 11.823 ms trace=a34f0621-09a7-4732-916b-c40cbde1ca89
+sci-02-api-gateway-1  | POST /api/productos 201 62.550 ms trace=ff747d66-f234-4952-b6c8-5780ad3c4f01
+sci-02-api-gateway-1  | PUT /api/productos/7 200 33.983 ms trace=8698449b-befe-48a7-8e55-64283d241e65
+sci-02-api-gateway-1  | PATCH /api/productos/7/reponer-stock 200 31.971 ms trace=90517956-0412-4b59-b514-6a5d38704972
+sci-02-api-gateway-1  | POST /api/pedidos 201 111.308 ms trace=9f506c90-8a70-402a-b5af-96b5abd55122
+sci-02-api-gateway-1  | GET /api/productos/7 200 9.374 ms trace=8ed14715-9d82-4950-a088-6b2a3d6e296d
+sci-02-api-gateway-1  | POST /api/pedidos 200 57.163 ms trace=bd26b812-2bac-4bf5-8191-e6d85089fd4e
+sci-02-api-gateway-1  | GET /api/productos/7 200 7.264 ms trace=7667efa2-a117-4975-8934-05f5f9ad0af9
+sci-02-api-gateway-1  | GET /api/productos 403 0.728 ms trace=f75e7f88-8ced-4525-859b-c4acc6ebb219
+sci-02-api-gateway-1  | GET /api/gateway/trazabilidad 200 0.907 ms trace=cd01db19-3196-4567-9151-ceb59e12b774
+sci-02-api-gateway-1  | GET /api/dashboard/resumen 200 10.348 ms trace=39279e65-3da2-4692-b1a6-2e06e1d1fc22
+sci-02-api-gateway-1  | OPTIONS /api/pedidos 204 0.703 ms trace=ae8f2a05-998e-4d0e-a7a3-f7927b456d2e
+sci-02-api-gateway-1  | OPTIONS /api/productos 204 0.293 ms trace=617bca9f-1e8c-42d2-b837-1582f3a915b6
+sci-02-api-gateway-1  | OPTIONS /health 204 0.331 ms trace=0ea9984c-5fcd-443e-b80e-d549827ff1e6
+sci-02-api-gateway-1  | OPTIONS /api/gateway/trazabilidad 204 0.286 ms trace=64cf6406-3c4c-4521-ad1a-d63bf5473085
+sci-02-api-gateway-1  | OPTIONS /api/dashboard/resumen 204 0.267 ms trace=13f8b037-f772-4411-8540-445b3a58ded4
+sci-02-api-gateway-1  | GET /api/gateway/trazabilidad 200 0.485 ms trace=a1fa3bca-e704-4a7a-8dc8-6117c4fc1c0e
+sci-02-api-gateway-1  | GET /health 200 28.445 ms trace=aa8365d7-27ad-4970-afc6-ec1d814b83e4
+sci-02-api-gateway-1  | GET /api/productos 200 30.127 ms trace=49de0984-b9b9-465c-b50f-5ce295e725e6
+sci-02-api-gateway-1  | GET /api/pedidos 200 40.580 ms trace=fb8d9a53-99fd-4ee5-860f-fc6f56969dcc
+sci-02-api-gateway-1  | GET /api/dashboard/resumen 200 29.506 ms trace=6a433c93-ac4c-4b60-ae5a-f4e3d5e2d3e3
+sci-02-api-gateway-1  | GET /health 200 10.232 ms trace=8d1458e0-2499-47c7-bbbc-0159621c4eb5
+sci-02-api-gateway-1  | GET /health 200 18.702 ms trace=825e0e58-a973-456d-a278-25e781bebbff
+sci-02-api-gateway-1  | GET /api/productos/7 200 12.861 ms trace=989673d0-afa2-4168-a1ed-3c4cff7be9ff
+sci-02-api-gateway-1  | GET /api/pedidos/1 200 13.495 ms trace=c6334adf-d2e6-4e4b-a61b-5b15c2011756
+sci-02-api-gateway-1  | GET /health 200 10.431 ms trace=ac04f068-3184-4342-9128-dd635d904c65
+sci-04-pedidos-1      | SCI-04 Pedidos listo
+sci-04-pedidos-1      | GET /health 200 6.015 ms trace=72abda17-1b31-45dc-bc9a-505734fb4969
+sci-04-pedidos-1      | GET /health 200 2.314 ms trace=6ac65f66-e504-4d3f-b729-f7d9889b04d2
+sci-04-pedidos-1      | GET /health 200 1.605 ms trace=7044104d-5c1d-4998-88d8-d1abfab1d6fd
+sci-04-pedidos-1      | GET /health 200 3.369 ms trace=71a3a736-9d33-4712-bbc1-4bb06f5af645
+sci-04-pedidos-1      | GET /health 200 1.246 ms trace=24a44c82-4e0e-4c6b-b40a-7118b437dd76
+sci-04-pedidos-1      | GET /health 200 1.946 ms trace=32b793c2-7e8a-4ee9-9392-db1c171cfd76
+sci-04-pedidos-1      | GET /health 200 3.308 ms trace=987ff812-e108-46a8-8453-0325c8767fa2
+sci-04-pedidos-1      | GET /health 200 1.741 ms trace=a34f0621-09a7-4732-916b-c40cbde1ca89
+sci-04-pedidos-1      | POST /api/pedidos 201 106.349 ms trace=9f506c90-8a70-402a-b5af-96b5abd55122
+sci-04-pedidos-1      | POST /api/pedidos 200 52.104 ms trace=bd26b812-2bac-4bf5-8191-e6d85089fd4e
+sci-04-pedidos-1      | GET /api/pedidos/indicadores-ods 200 4.298 ms trace=39279e65-3da2-4692-b1a6-2e06e1d1fc22
+sci-04-pedidos-1      | GET /health 200 10.692 ms trace=aa8365d7-27ad-4970-afc6-ec1d814b83e4
+sci-04-pedidos-1      | GET /api/pedidos 200 6.825 ms trace=fb8d9a53-99fd-4ee5-860f-fc6f56969dcc
+sci-04-pedidos-1      | GET /api/pedidos/indicadores-ods 200 7.567 ms trace=6a433c93-ac4c-4b60-ae5a-f4e3d5e2d3e3
+sci-04-pedidos-1      | GET /health 200 1.537 ms trace=8d1458e0-2499-47c7-bbbc-0159621c4eb5
+sci-04-pedidos-1      | SCI-04 Pedidos listo
+sci-04-pedidos-1      | GET /health 200 6.395 ms trace=825e0e58-a973-456d-a278-25e781bebbff
+sci-04-pedidos-1      | GET /api/pedidos/1 200 8.051 ms trace=c6334adf-d2e6-4e4b-a61b-5b15c2011756
+sci-04-pedidos-1      | GET /health 200 1.646 ms trace=6ac6f957-39ec-497e-9231-22c75267ed6a
+sci-04-pedidos-1      | GET /health 200 1.939 ms trace=ac04f068-3184-4342-9128-dd635d904c65
+sci-01-panel-admin-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+sci-01-panel-admin-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+sci-01-panel-admin-1  | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+sci-01-panel-admin-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: using the "epoll" event method
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: nginx/1.30.6
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0)
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: OS: Linux 6.18.33.2-microsoft-standard-WSL2
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: start worker processes
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: start worker process 29
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: start worker process 30
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: start worker process 31
+sci-01-panel-admin-1  | 2026/11/16 02:50:06 [notice] 1#1: start worker process 32
+sci-01-panel-admin-1  | 172.18.0.1 - - [16/Nov/2026:02:50:29 +0000] "GET / HTTP/1.1" 200 488 "-" "node" "-"
+sci-01-panel-admin-1  | 172.18.0.1 - - [16/Nov/2026:02:50:30 +0000] "GET / HTTP/1.1" 200 488 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36" "-"
+sci-01-panel-admin-1  | 172.18.0.1 - - [16/Nov/2026:02:50:30 +0000] "GET /assets/index-T73-k3Co.js HTTP/1.1" 200 238607 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36" "-"
+sci-01-panel-admin-1  | 172.18.0.1 - - [16/Nov/2026:02:50:30 +0000] "GET /assets/index-DDl7jVbn.css HTTP/1.1" 200 8542 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.8154.6 Safari/537.36" "-"

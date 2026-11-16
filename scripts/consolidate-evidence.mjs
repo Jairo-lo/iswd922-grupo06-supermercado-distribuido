@@ -1,0 +1,15 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+import { sourceFingerprint } from './source-fingerprint.mjs';
+const root = fileURLToPath(new URL('../', import.meta.url));
+const backend = JSON.parse(await readFile(resolve(root, 'docs/evidencias/acceptance-results.json'), 'utf8'));
+const ui = JSON.parse(await readFile(resolve(root, 'docs/evidencias/ui-acceptance.json'), 'utf8'));
+const fingerprint = await sourceFingerprint();
+if (backend.fingerprint !== fingerprint || ui.fingerprint !== fingerprint) throw new Error('La evidencia corresponde a otra versión del código. Reejecute las pruebas.');
+const criteria = [...backend.criteria, { pt: 'PT-04', cases: ui.results.length, passed: ['CA04-01','CA04-02','CA04-03','CA04-04','CA04-05','CA04-06'].every(id => ui.results.some(r => r.id === id)) && ui.results.every(r => r.passed) }];
+const value = criteria.filter(c => c.passed).length / criteria.length * 100;
+const result = { timestamp: new Date().toISOString(), fingerprint, criteria, cases: { passed: [...backend.results, ...ui.results].filter(r => r.passed).length, total: backend.results.length + ui.results.length }, metrics: { ...backend.metrics, 'MET-CAL-01': { valor: value, unidad: '%', alcance: '4 criterios por paquete PT-01 a PT-04; evidencia técnica automatizada. Aceptación y revisión cruzada pendientes.' } }, pendientes: ['Revisión cruzada por un integrante distinto del autor', 'FCA/PCA y aprobación formal de línea base por el equipo', 'Conciliar registro de defectos con GitHub Issues para MET-CAL-02'] };
+await writeFile(resolve(root, 'docs/evidencias/verificacion-consolidada.json'), JSON.stringify(result, null, 2) + '\n');
+console.log('Verificación técnica: ' + result.cases.passed + '/' + result.cases.total + ' casos. MET-CAL-01: ' + value + '%. MET-CAL-02: ' + (result.metrics['MET-CAL-02'].valor ?? 'N/D'));
+process.exitCode = criteria.every(c => c.passed) ? 0 : 1;

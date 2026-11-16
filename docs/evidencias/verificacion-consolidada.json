@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-11-16T02:49:09.957Z",
+  "fingerprint": "ab5ca38770705a76f9154962adfafd5ba1fae5f87cdc86937e7cb79b7a403717",
+  "criteria": [
+    {
+      "pt": "PT-01",
+      "passed": true,
+      "cases": 7
+    },
+    {
+      "pt": "PT-02",
+      "passed": true,
+      "cases": 8
+    },
+    {
+      "pt": "PT-03",
+      "passed": true,
+      "cases": 5
+    },
+    {
+      "pt": "PT-04",
+      "cases": 6,
+      "passed": true
+    }
+  ],
+  "cases": {
+    "passed": 26,
+    "total": 26
+  },
+  "metrics": {
+    "MET-CAL-01": {
+      "valor": 100,
+      "unidad": "%",
+      "alcance": "4 criterios por paquete PT-01 a PT-04; evidencia técnica automatizada. Aceptación y revisión cruzada pendientes."
+    },
+    "MET-CAL-02": {
+      "valor": null,
+      "unidad": "defectos",
+      "gravesRegistradosLocalmente": 0,
+      "casosFallidosEnEstaEjecucion": 0,
+      "alcance": "N/D si falta un registro completo y validado; los tests no sustituyen GitHub Issues"
+    }
+  },
+  "pendientes": [
+    "Revisión cruzada por un integrante distinto del autor",
+    "FCA/PCA y aprobación formal de línea base por el equipo",
+    "Conciliar registro de defectos con GitHub Issues para MET-CAL-02"
+  ]
+}

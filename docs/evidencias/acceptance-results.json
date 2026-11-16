@@ -1,0 +1,159 @@
+{
+  "fingerprint": "ab5ca38770705a76f9154962adfafd5ba1fae5f87cdc86937e7cb79b7a403717",
+  "started": "2026-11-16T02:47:40.909Z",
+  "finished": "2026-11-16T02:48:22.970Z",
+  "logs": "C:/Users/Pato/Documents/Microservicios/.test-runs/acceptance-1794797260912",
+  "results": [
+    {
+      "id": "CA01-01",
+      "pt": "PT-01",
+      "description": "Salud de inventario y semilla en cuatro estados",
+      "passed": true
+    },
+    {
+      "id": "CA01-02",
+      "pt": "PT-01",
+      "description": "Creación persistente de producto",
+      "passed": true
+    },
+    {
+      "id": "CA01-03",
+      "pt": "PT-01",
+      "description": "Entradas inválidas rechazadas sin crear registros",
+      "passed": true
+    },
+    {
+      "id": "CA01-04",
+      "pt": "PT-01",
+      "description": "SKU único y edición consistente",
+      "passed": true
+    },
+    {
+      "id": "CA01-05",
+      "pt": "PT-01",
+      "description": "Reposición idempotente y cantidades inválidas",
+      "passed": true
+    },
+    {
+      "id": "CA01-06",
+      "pt": "PT-01",
+      "description": "Descuentos concurrentes no producen stock negativo",
+      "passed": true
+    },
+    {
+      "id": "CA02-01",
+      "pt": "PT-02",
+      "description": "Pedido viable descuenta stock y conserva traza",
+      "passed": true
+    },
+    {
+      "id": "CA02-02",
+      "pt": "PT-02",
+      "description": "Pedido sin stock queda registrado sin alterar inventario",
+      "passed": true
+    },
+    {
+      "id": "CA02-03",
+      "pt": "PT-02",
+      "description": "Producto inexistente genera rechazo trazable",
+      "passed": true
+    },
+    {
+      "id": "CA02-04",
+      "pt": "PT-02",
+      "description": "Validación de pedidos y filtros",
+      "passed": true
+    },
+    {
+      "id": "CA02-05",
+      "pt": "PT-02",
+      "description": "Reintento del mismo pedido no duplica registro ni descuento",
+      "passed": true
+    },
+    {
+      "id": "CA02-06",
+      "pt": "PT-02",
+      "description": "Pedidos concurrentes se resuelven contra disponibilidad real",
+      "passed": true
+    },
+    {
+      "id": "CA03-01",
+      "pt": "PT-03",
+      "description": "Salud consolidada y agregación ODS coherente",
+      "passed": true
+    },
+    {
+      "id": "CA03-02",
+      "pt": "PT-03",
+      "description": "Lecturas predeterminadas y escrituras con rol obligatorio",
+      "passed": true
+    },
+    {
+      "id": "CA03-03",
+      "pt": "PT-03",
+      "description": "Bitácora contiene el rechazo y limita su tamaño a 50",
+      "passed": true
+    },
+    {
+      "id": "CA03-04",
+      "pt": "PT-03",
+      "description": "Alias del sistema anterior siguen operativos",
+      "passed": true
+    },
+    {
+      "id": "CA02-07",
+      "pt": "PT-02",
+      "description": "Persistencia después de reiniciar ambos servicios",
+      "passed": true
+    },
+    {
+      "id": "CA03-05",
+      "pt": "PT-03",
+      "description": "Caída de inventario degrada salud y conserva intento de pedido",
+      "passed": true
+    },
+    {
+      "id": "CA02-08",
+      "pt": "PT-02",
+      "description": "Respuesta de descuento perdida se reconcilia tras reinicio sin duplicarlo",
+      "passed": true
+    },
+    {
+      "id": "CA01-07",
+      "pt": "PT-01",
+      "description": "Migración no destructiva e idempotente de una base heredada",
+      "passed": true
+    }
+  ],
+  "criteria": [
+    {
+      "pt": "PT-01",
+      "passed": true,
+      "cases": 7
+    },
+    {
+      "pt": "PT-02",
+      "passed": true,
+      "cases": 8
+    },
+    {
+      "pt": "PT-03",
+      "passed": true,
+      "cases": 5
+    }
+  ],
+  "metrics": {
+    "MET-CAL-01": {
+      "valor": 100,
+      "unidad": "%",
+      "alcance": "PT-01, PT-02 y PT-03 evaluados automáticamente; PT-04 requiere pruebas de navegador y aceptación humana"
+    },
+    "MET-CAL-02": {
+      "valor": null,
+      "unidad": "defectos",
+      "gravesRegistradosLocalmente": 0,
+      "casosFallidosEnEstaEjecucion": 0,
+      "alcance": "N/D si falta un registro completo y validado; los tests no sustituyen GitHub Issues"
+    }
+  }
+}

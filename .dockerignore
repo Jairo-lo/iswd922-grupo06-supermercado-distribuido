@@ -1,0 +1,15 @@
+.git
+**/node_modules
+**/dist
+.local-backup
+.test-runs
+**/*.sqlite
+**/*.sqlite-*
+**/.env
+*.docx
+*.xlsx
+*.zip
+docs/evidencias
+test-results
+playwright-report
+.test-audit.json

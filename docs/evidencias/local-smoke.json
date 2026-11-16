@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-11-15T21:21:39.362Z",
+  "beforeProducts": 7,
+  "preserved": true,
+  "status": "PASS",
+  "afterProducts": 7,
+  "gatewayHealth": {
+    "status": "UP",
+    "gatewayStatus": "UP",
+    "sci": "SCI-02",
+    "wbs": "PT-03",
+    "service": "api-gateway",
+    "timestamp": "2026-11-15T21:21:46.543Z",
+    "servicios": [
+      {
+        "status": "UP",
+        "sci": "SCI-03",
+        "wbs": "PT-01",
+        "service": "inventario",
+        "timestamp": "2026-11-15T21:21:46.540Z"
+      },
+      {
+        "status": "UP",
+        "sci": "SCI-04",
+        "wbs": "PT-02",
+        "service": "pedidos",
+        "timestamp": "2026-11-15T21:21:46.540Z"
+      }
+    ]
+  },
+  "panelTitle": "Supermercado · ISWD922 Grupo 06"
+}

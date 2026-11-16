@@ -1,0 +1,35 @@
+{
+  "name": "iswd922-grupo06-supermercado-distribuido",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema Distribuido de Gestión de Supermercado — ISWD922 Grupo 06",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "workspaces": [
+    "services/sci-01-panel-admin",
+    "services/sci-02-api-gateway",
+    "services/sci-03-inventario",
+    "services/sci-04-pedidos"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "build:all": "npm run build --workspaces",
+    "check:types": "npm run check:types --workspaces",
+    "lint": "npm run lint --workspace @grupo06/sci-01-panel-admin",
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs --production",
+    "test:acceptance": "node tests/integration/verify_acceptance_criteria.mjs",
+    "test:ui": "playwright test",
+    "test": "npm run test:acceptance",
+    "verify": "npm run build:all && npm run lint && npm run test:acceptance && npm run test:ui && node scripts/consolidate-evidence.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  },
+  "overrides": {
+    "uuid": "^11.1.1",
+    "minimatch": "^11.0.8"
+  },
+  "type": "module"
+}

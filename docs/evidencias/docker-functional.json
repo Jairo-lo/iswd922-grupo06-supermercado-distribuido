@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-16T02:50:31.045Z",
+  "runtime": "Docker Desktop Linux",
+  "productoId": 7,
+  "pedidoId": 1,
+  "stockFinal": 12,
+  "cases": [
+    {
+      "name": "Gateway consolida tres servicios UP",
+      "passed": true
+    },
+    {
+      "name": "Nginx sirve panel y healthz",
+      "passed": true
+    },
+    {
+      "name": "Crear y actualizar producto por Gateway",
+      "passed": true
+    },
+    {
+      "name": "Reposición atómica",
+      "passed": true
+    },
+    {
+      "name": "Pedido viable confirmado con descuento consistente",
+      "passed": true
+    },
+    {
+      "name": "Rechazo de pedido sin stock conserva existencias",
+      "passed": true
+    },
+    {
+      "name": "Control de acceso y bitácora registran 403",
+      "passed": true
+    },
+    {
+      "name": "Resumen ODS disponible",
+      "passed": true
+    },
+    {
+      "name": "Panel compilado en Nginx conecta y navega las cuatro secciones",
+      "passed": true
+    },
+    {
+      "name": "Volúmenes conservan producto, existencias y pedido tras reiniciar contenedores",
+      "passed": true
+    }
+  ],
+  "persistence": "PASS",
+  "finished": "2026-11-16T02:50:40.515Z"
+}

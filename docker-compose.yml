@@ -1,0 +1,63 @@
+name: iswd922-grupo06-supermercado-distribuido
+services:
+  sci-03-inventario:
+    build:
+      context: .
+      dockerfile: services/sci-03-inventario/Dockerfile
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      DB_STORAGE: /app/data/inventario.sqlite
+    volumes: [inventario-data:/app/data]
+    expose: ["3000"]
+    networks: [supermercado-net]
+  sci-04-pedidos:
+    build:
+      context: .
+      dockerfile: services/sci-04-pedidos/Dockerfile
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3001
+      DB_STORAGE: /app/data/pedidos.sqlite
+      INVENTARIO_URL: http://sci-03-inventario:3000
+    volumes: [pedidos-data:/app/data]
+    expose: ["3001"]
+    depends_on:
+      sci-03-inventario:
+        condition: service_healthy
+    networks: [supermercado-net]
+  sci-02-api-gateway:
+    build:
+      context: .
+      dockerfile: services/sci-02-api-gateway/Dockerfile
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4000
+      INVENTARIO_URL: http://sci-03-inventario:3000
+      PEDIDOS_URL: http://sci-04-pedidos:3001
+      CORS_ORIGIN: http://localhost:8080,http://127.0.0.1:8080
+      GATEWAY_ACCESS_KEY: ${GATEWAY_ACCESS_KEY:-}
+    ports: ["127.0.0.1:4000:4000"]
+    depends_on:
+      sci-03-inventario:
+        condition: service_healthy
+      sci-04-pedidos:
+        condition: service_healthy
+    networks: [supermercado-net]
+  sci-01-panel-admin:
+    build:
+      context: .
+      dockerfile: services/sci-01-panel-admin/Dockerfile
+      args:
+        VITE_API_GATEWAY_URL: http://localhost:4000
+    ports: ["127.0.0.1:8080:80"]
+    depends_on:
+      sci-02-api-gateway:
+        condition: service_healthy
+    networks: [supermercado-net]
+networks:
+  supermercado-net:
+    name: supermercado-net
+volumes:
+  inventario-data:
+  pedidos-data:

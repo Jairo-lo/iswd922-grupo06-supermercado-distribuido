@@ -1,0 +1,779 @@
+{
+  "info": {
+    "name": "GRUPO06 Supermercado SQA · ISWD922",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Verificación de PT-01/PT-02/PT-03 e indicadores ODS. Ejecutar sobre un entorno de pruebas: crea y modifica productos y pedidos. PT-04 se verifica con Playwright y revisión humana."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    },
+    {
+      "key": "rol",
+      "value": "ADMIN"
+    },
+    {
+      "key": "productoId",
+      "value": "1"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (!pm.collectionVariables.get('runSku')) pm.collectionVariables.set('runSku', 'PM-' + Date.now());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('X-Trace-ID presente', () => pm.expect(pm.response.headers.get('X-Trace-ID')).to.be.a('string').and.not.empty);"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "PT-01 Inventario",
+      "item": [
+        {
+          "name": "Crear producto de prueba",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"{{runSku}}\",\n  \"nombre\": \"Arroz Postman\",\n  \"categoria\": \"Pruebas\",\n  \"precio\": 2.5,\n  \"stockActual\": 10,\n  \"stockMinimo\": 2,\n  \"stockMaximo\": 20,\n  \"unidad\": \"unid\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set('runSku', 'PM-' + Date.now());"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set('productoId', pm.response.json().id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Listar y revisar alertas",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Contrato de inventario', () => { const d=pm.response.json(); pm.expect(d.productos).to.be.an('array'); pm.expect(d.resumenAlertas).to.have.property('excedentes'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Actualizar existencias",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos/{{productoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "{{productoId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stockActual\": 12\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Stock actualizado', () => pm.expect(pm.response.json().stockActual).to.eql(12));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reponer existencias",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos/{{productoId}}/reponer-stock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "{{productoId}}",
+                "reponer-stock"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cantidad\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Stock repuesto', () => pm.expect(pm.response.json().producto.stockActual).to.eql(15));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Descuento atómico",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos/{{productoId}}/descontar-stock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "{{productoId}}",
+                "descontar-stock"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cantidad\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Stock descontado', () => pm.expect(pm.response.json().producto.stockActual).to.eql(13));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Rechazar stock negativo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos/{{productoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "{{productoId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stockActual\": -1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PT-02 Pedidos (Viables y No Viables)",
+      "item": [
+        {
+          "name": "Pedido viable",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "pedidos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNombre\": \"Cliente Postman\",\n  \"productoId\": {{productoId}},\n  \"cantidadSolicitada\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 201', () => pm.response.to.have.status(201));",
+                  "pm.test('Confirmado', () => pm.expect(pm.response.json().estado).to.eql('CONFIRMADO'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Pedido no viable",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "pedidos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNombre\": \"Cliente Postman\",\n  \"productoId\": {{productoId}},\n  \"cantidadSolicitada\": 100000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Rechazado sin stock', () => pm.expect(pm.response.json().estado).to.eql('RECHAZADO_SIN_STOCK'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Stock tras rechazo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos/{{productoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "{{productoId}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('No se descontó el rechazo', () => pm.expect(pm.response.json().stockActual).to.eql(11));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Producto inexistente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "pedidos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteNombre\": \"Cliente Postman\",\n  \"productoId\": 9999999,\n  \"cantidadSolicitada\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Rechazo persistido', () => pm.expect(pm.response.json().estado).to.eql('RECHAZADO_PRODUCTO_INEXISTENTE'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Historial de rechazos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/pedidos?viable=false",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "pedidos"
+              ],
+              "query": [
+                {
+                  "key": "viable",
+                  "value": "false"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Solo no viables', () => pm.expect(pm.response.json().every(p => !p.esViable)).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PT-03 API Gateway y Seguridad",
+      "item": [
+        {
+          "name": "Salud consolidada",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Dependencias UP', () => pm.expect(pm.response.json().servicios.every(s => s.status === 'UP')).to.eql(true));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Rol no autorizado",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "INVITADO_SIN_PERMISO"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 403', () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auditor no puede escribir",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "AUDITOR_SQA"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/productos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"AUDITOR-BLOCKED\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 403', () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bitácora de operaciones",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/gateway/trazabilidad",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "gateway",
+                "trazabilidad"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Límite y evidencia de bloqueo', () => { const d=pm.response.json(); pm.expect(d.length).to.be.at.most(50); pm.expect(d.some(t=>t.codigoEstado===403)).to.eql(true); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indicadores ODS 12",
+      "item": [
+        {
+          "name": "Indicadores ODS 12 y ODS 8",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/pedidos/indicadores-ods",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "pedidos",
+                "indicadores-ods"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Contrato de indicadores', () => pm.expect(pm.response.json()).to.have.property('porcentajePedidosValidadosContraExistencias'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Resumen ejecutivo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Operador-Rol",
+                "value": "{{rol}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard/resumen",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dashboard",
+                "resumen"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('Detección de alertas ODS', () => { const d=pm.response.json(); pm.expect(d.ods['IND-ODS-02']).to.eql(d.inventario.agotados+d.inventario.faltantes+d.inventario.excedentes); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

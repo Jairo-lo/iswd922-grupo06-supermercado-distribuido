@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.sqlite
+*.sqlite-*
+*.db
+.env
+!.env.example
+.local-backup/
+.test-runs/
+coverage/
+test-results/
+playwright-report/
+*.log

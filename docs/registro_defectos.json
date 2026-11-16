@@ -1,0 +1,6 @@
+{
+  "version": "1.0",
+  "completo": false,
+  "alcance": "Registro local inicial. Requiere conciliación de QA con GitHub Issues y aprobación del corte antes de declarar MET-CAL-02 global.",
+  "defectos": []
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-11-16T02:49:08.955Z",
+  "fingerprint": "ab5ca38770705a76f9154962adfafd5ba1fae5f87cdc86937e7cb79b7a403717",
+  "criterion": "PT-04",
+  "screenshots": "C:\\Users\\Pato\\Documents\\Microservicios\\docs\\evidencias\\capturas\\1794797311919-25940",
+  "results": [
+    {
+      "id": "CA04-01",
+      "passed": true
+    },
+    {
+      "id": "CA04-02",
+      "passed": true
+    },
+    {
+      "id": "CA04-03",
+      "passed": true
+    },
+    {
+      "id": "CA04-04",
+      "passed": true
+    },
+    {
+      "id": "CA04-05",
+      "passed": true
+    },
+    {
+      "id": "CA04-06",
+      "passed": true
+    }
+  ],
+  "humanAcceptance": "Pendiente de revisión cruzada y aceptación por el equipo"
+}
