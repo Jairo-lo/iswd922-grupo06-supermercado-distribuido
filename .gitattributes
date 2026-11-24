@@ -1,0 +1,8 @@
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.png binary
+*.zip binary
+docs/entrega-documental-20261124/*.txt text eol=lf
+docs/entrega-documental-20261124/*.json text eol=lf
