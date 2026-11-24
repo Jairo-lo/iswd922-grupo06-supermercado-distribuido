@@ -1,6 +1,6 @@
 # Matriz de trazabilidad de requisitos
 
-Los identificadores RF son referencias locales del incremento, pendientes de conciliación con la matriz aprobada por el equipo. Cada caso CA se ejecuta en la batería de integración o de navegador; los escenarios de navegador no reemplazan la aceptación humana de PT-04.
+Los identificadores RF-01 a RF-12 son referencias técnicas del incremento. La conciliación documental del 24/11/2026 identifica las necesidades generales como RN-01 (RF-01 a RF-03, PT-01), RN-02 (RF-04 a RF-06, PT-02), RN-03 (RF-07 a RF-09, PT-03) y RN-04 (RF-10 a RF-12, PT-04). Los recursos conservan los IDs RES de PRJ-012-A. Esta equivalencia corrige el uso anterior de RF-01 a RF-04 para necesidades generales; la aprobación por el equipo permanece pendiente. Cada caso CA se ejecuta en la batería de integración o de navegador; los escenarios de navegador no reemplazan la aceptación humana de PT-04.
 
 | Necesidad de negocio | Requisito | Paquete | SCI | Endpoint o componente | Verificación | R ejecutor y revisor |
 | --- | --- | --- | --- | --- | --- | --- |

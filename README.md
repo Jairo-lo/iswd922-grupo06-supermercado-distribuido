@@ -1,6 +1,6 @@
 # Sistema Distribuido de Gestión de Supermercado — ISWD922 (Grupo 06)
 
-Aplicación académica con inventario persistente, pedidos validados contra existencias y un panel administrativo. Los cuatro elementos de configuración se gestionan en un monorepo llamado `iswd922-grupo06-supermercado-distribuido`. El remoto conserva su URL original: https://github.com/Jairo-lo/curso-microservicios-aeis.git.
+Aplicación académica con inventario persistente, pedidos validados contra existencias y un panel administrativo. Los cuatro elementos de configuración se gestionan en el monorepo `iswd922-grupo06-supermercado-distribuido`: https://github.com/Jairo-lo/iswd922-grupo06-supermercado-distribuido.git. El incremento técnico `5b2b164` está publicado en `main`; la rama técnica es `feature/iswd922-supermercado`. Consulte la conciliación RN/RF en la matriz de trazabilidad.
 
 ## Ejecución local
 
@@ -102,6 +102,8 @@ El panel consume exclusivamente el Gateway y envía `X-Operador-Rol`. ADMIN y OP
 IND-ODS-01 es el porcentaje de pedidos realmente contrastados con existencias; los errores de integración no se cuentan como validaciones. IND-ODS-02 cuenta productos actualmente agotados, críticos o excedidos; es un indicador de detección y no acredita anticipación temporal ni reducción de desperdicio. IND-ODS-03 es el tiempo promedio de procesamiento del pedido, asociado a digitalización (ODS 8, meta 8.2). Los objetivos se alinean a ODS 12, meta 12.3 y ODS 8, metas 8.2 y 8.3. No se implementan pagos reales, facturación fiscal ni reparto.
 
 ## Gestión y evidencias
+
+La [entrega documental del 24/11/2026](docs/entrega-documental-20261124/00_LEER_PRIMERO.txt) contiene los originales editables consolidados, sus PDF, la equivalencia RN/RF y el inventario con SHA-256. Sustituye como referencia documental vigente a los anexos históricos de la raíz; conserva el commit `5b2b164` como identidad del producto técnico evaluado. Las aprobaciones humanas siguen pendientes.
 
 - [Alcance y resumen de Charter](docs/01_Project_Charter_Resumen.md)
 - [Matriz de trazabilidad](docs/02_Matriz_Trazabilidad_Requisitos_RTM.md)

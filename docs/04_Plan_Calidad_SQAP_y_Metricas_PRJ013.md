@@ -4,14 +4,14 @@ Este resumen conserva las definiciones de PRJ-013-A y el contexto de PRJ-013-B. 
 
 | ID | Fórmula | Verde | Amarillo | Rojo | Responsable |
 | --- | --- | --- | --- | --- | --- |
-| MET-PROJ-01 | Terminados con DoD / comprometidos × 100 | >=85% | 70–84% | <70% | Marcelo Torres |
-| MET-PROJ-02 | Horas reales / horas de línea base × 100 | 85–105% | 70–84% o 106–115% | <70% o >115% | Marcelo Torres |
+| MET-PROJ-01 | Terminados con DoD / comprometidos × 100 | >=85% | 70–84.9% | <70% | Marcelo Torres |
+| MET-PROJ-02 | Horas reales / horas de línea base × 100 | 85–105% | 70–84.9% o 105.1–115% | <70% o >115% | Marcelo Torres |
 | MET-PROC-01 | Mediana(fecha de merge o cierre − inicio en progreso), días calendario | <=3 días | 3.1–5 días | >5 días | Jairo Quispe |
-| MET-PROC-02 | Entregables/PR devueltos / revisados × 100 | <=15% | 16–25% | >25% | Jairo Quispe |
-| MET-CAL-01 | Criterios superados / criterios evaluados × 100 | >=90% | 75–89% | <75% | Harryson Montesdeoca |
+| MET-PROC-02 | Entregables/PR devueltos / revisados × 100 | <=15% | 15.1–25% | >25% | Jairo Quispe |
+| MET-CAL-01 | Criterios superados / criterios evaluados × 100 | >=90% | 75–89.9% | <75% | Harryson Montesdeoca |
 | MET-CAL-02 | Defectos Abiertos de severidad Alta o Crítica | 0 | 1 | >=2 | Harryson con Anael |
 
-Los intervalos literales provienen de la matriz. Hay huecos para valores decimales (por ejemplo 84.5%, 105.5%, 15.5% o 3.05 días); el equipo debe acordar redondeo o intervalos continuos mediante SCCB antes de automatizar ese semáforo general. No se altera la definición sin esa decisión.
+La conciliación documental del 24/11/2026 utiliza una cifra decimal para interpretar los intervalos de PRJ-013-A: redondeo comercial (mitades hacia arriba) antes de clasificar, conservando el dato original. Esta regla editorial conserva los umbrales y los resultados históricos, cierra huecos como 3.05 días y está pendiente de ratificación por QA/SCCB antes de automatizar el semáforo. Los porcentajes se expresan en puntos porcentuales.
 
 Si falta denominador, historial, registro de horas o fuente completa, el valor es N/D. Los tests no crean horas ni fechas de trabajo humanas. Para MET-PROC-01 registrar la fecha real de inicio en progreso y la de merge, no sustituir el inicio por la apertura del PR si difieren.
 

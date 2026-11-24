@@ -1,0 +1,34 @@
+DOCUMENTACIÓN CONSOLIDADA - 24/11/2026
+
+Versiones actuales:
+PRJ-012 Plan de Gestión de Recursos v1.3 (DOCX y PDF).
+PRJ-012-A Matriz de Requisitos y Disponibilidad de Recursos v1.2 (XLSX).
+PRJ-012-B RBS v1.2 (DOCX y PDF).
+PRJ-013 Plan de Medición y Calidad v1.3 (DOCX y PDF).
+PRJ-013-A Matriz de Métricas v1.3 (XLSX).
+PRJ-013-B Registro de Mediciones v1.2 (XLSX).
+Project Charter v1.2 (PDF; mantiene el acta fundacional en borrador).
+Presentación de Gestión v1.1 (PPTX editable y PDF; 19 diapositivas).
+
+El Control de Consolidación PDF y las secciones/hojas de control del 24/11
+contienen la conciliación vigente. Las referencias a versiones anteriores en
+antecedentes e historiales identifican las fuentes de esas afirmaciones.
+
+RN-01 a RN-04 identifica necesidades generales. RF-01 a RF-12 identifica
+requisitos técnicos, conforme a la RTM del producto. RES conserva su uso
+para recursos. Los casos CA y las evidencias están referidos al repositorio.
+
+Producto técnico de referencia: 5b2b164c2336c8f5b0fc99bb3123f57c706018f2.
+Repositorio: https://github.com/Jairo-lo/iswd922-grupo06-supermercado-distribuido
+La publicación posterior de esta documentación crea un commit documental
+distinto sin cambiar la identidad del producto técnico evaluado.
+
+Los originales están en 02_Versiones_anteriores. Los ZIP fueron verificados
+por CRC y SHA-256, extraídos o conciliados con archivos idénticos, y eliminados.
+El inventario JSON registra extracciones, deduplicación y hashes de entrega.
+Los .md y .drawio originales del directorio del proyecto se conservaron.
+
+Estado: edición consolidada, para revisión del equipo. Aprobaciones humanas,
+FCA/PCA formal, conciliación completa de defectos y aceptación externa siguen
+pendientes de evidencia. La regla editorial de redondeo requiere ratificación
+QA/SCCB. No se generaron horas ni resultados nuevos de pruebas de software.

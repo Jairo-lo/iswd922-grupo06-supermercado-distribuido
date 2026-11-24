@@ -23,7 +23,7 @@ Las reservas confirmadas y los intentos pendientes deben conservarse junto a sus
 | LB-02 Interfaces acordadas | Endpoints, JSON, roles, reservas y Compose | Revisión cruzada de contratos por SCM |
 | LB-03 Producto candidato | SHA de código, lock, resultados FCA/PCA y defectos | Revisión independiente y autorización interna |
 
-Estas líneas base son propuestas de control; este incremento no las marca aprobadas ni crea tags o releases. Las ramas de trabajo siguen `codex/*` para este asistente y la convención del equipo que se acuerde para las demás contribuciones. La rama principal del remoto es main; no se impone una rama develop inexistente.
+Estas líneas base son propuestas de control; este incremento no las marca aprobadas ni crea tags o releases. Las ramas de trabajo utilizan nombres funcionales, como `feature/iswd922-supermercado`, sin referencias a herramientas de autoría. La rama principal es `main`. El producto técnico `5b2b164c2336c8f5b0fc99bb3123f57c706018f2` está integrado por avance rápido en main; su publicación no acredita aprobación formal de línea base.
 
 ## Comité de control de cambios
 

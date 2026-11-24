@@ -1,0 +1,197 @@
+{
+  "date": "24/11/2026",
+  "status": "Consolidación documental; aprobación humana pendiente",
+  "operations": [
+    {
+      "file": "GRUPO06_PRJ-012-A_Matriz_Requisitos_Disponibilidad_Recursos_v1.2.xlsx",
+      "checks": "Existing formulas and M1/M2 preserved",
+      "sha256": "556ae644e9054352b079b7ab2ffd1a17304f4718be57f8160e41691e3a5d1aa3"
+    },
+    {
+      "file": "GRUPO06_PRJ-013-A_Matriz_Metricas_v1.3.xlsx",
+      "checks": "Existing formulas and M1/M2 preserved",
+      "sha256": "1780bcf3de83cad872fa69167d5c9b3f3eb06ee9b8c5ea9b3a1b6f66fbef45f3"
+    },
+    {
+      "file": "GRUPO06_PRJ-013-B_Registro_Mediciones_v1.2.xlsx",
+      "checks": "Existing formulas and M1/M2 preserved",
+      "sha256": "fe57968486fc5446e584e7dee60bcec58dc028702d4ca9715c55bde5951199a3"
+    },
+    {
+      "zip": "GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.0.pdf",
+      "duplicate_of": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.pdf"
+    },
+    {
+      "zip": "GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.0.drawio",
+      "duplicate_of": "GRUPO06_PRJ-012-B_RBS_v1.0.drawio"
+    },
+    {
+      "removed_zip": "GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "reason": "CRC and all members verified against extracted or identical existing files"
+    },
+    {
+      "zip": "GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.1.pdf",
+      "duplicate_of": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.pdf"
+    },
+    {
+      "zip": "GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.1.drawio",
+      "extracted": "02_Versiones_anteriores\\Extraidos_ZIP\\GRUPO06_PRJ-012-B_RBS_v1.1\\GRUPO06_PRJ-012-B_RBS_v1.1.drawio",
+      "sha256": "b22be0f5d22477ad58b77553e18de2aafaf60614269c073d9ed2fbf9d890555b"
+    },
+    {
+      "removed_zip": "GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "reason": "CRC and all members verified against extracted or identical existing files"
+    },
+    {
+      "zip": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.1.pdf",
+      "duplicate_of": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.pdf"
+    },
+    {
+      "zip": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.1.drawio",
+      "duplicate_of": "02_Versiones_anteriores\\Extraidos_ZIP\\GRUPO06_PRJ-012-B_RBS_v1.1\\GRUPO06_PRJ-012-B_RBS_v1.1.drawio"
+    },
+    {
+      "removed_zip": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.zip",
+      "reason": "CRC and all members verified against extracted or identical existing files"
+    },
+    {
+      "zip": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.0.pdf",
+      "duplicate_of": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.pdf"
+    },
+    {
+      "zip": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "member": "GRUPO06_PRJ-012-B_RBS_v1.0.drawio",
+      "duplicate_of": "GRUPO06_PRJ-012-B_RBS_v1.0.drawio"
+    },
+    {
+      "removed_zip": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.zip",
+      "reason": "CRC and all members verified against extracted or identical existing files"
+    },
+    {
+      "removed_duplicate": "GRUPO06_PRJ-012-B_RBS_v1.0.pdf",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.0.pdf"
+    },
+    {
+      "removed_duplicate": "GRUPO06_PRJ-013-A_Matriz_Metricas_v1.1.xlsx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-013-A_Matriz_Metricas_v1.1.xlsx"
+    },
+    {
+      "removed_duplicate": "GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.1.docx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.1.docx"
+    },
+    {
+      "removed_duplicate": "Project Charter Sistema Distribuido de Gestión de Supermercado.pdf",
+      "retained": "02_Versiones_anteriores\\Project Charter Sistema Distribuido de Gestión de Supermercado.pdf"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-A_Matriz_Requisitos_Disponibilidad_Recursos_v1.1.xlsx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-012-A_Matriz_Requisitos_Disponibilidad_Recursos_v1.1.xlsx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.docx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.1.docx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012-B_RBS_v1.1.pdf",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-012-B_RBS_v1.1.pdf"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-012_Plan_Gestion_Recursos_v1.2.docx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-012_Plan_Gestion_Recursos_v1.2.docx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-013-A_Matriz_Metricas_v1.2.xlsx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-013-A_Matriz_Metricas_v1.2.xlsx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-013-B_Registro_Mediciones_v1.1.xlsx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-013-B_Registro_Mediciones_v1.1.xlsx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.2.docx",
+      "retained": "02_Versiones_anteriores\\GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.2.docx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\Presentacion_Gestion_Supermercado.pptx_20261107_205204_0000.pptx",
+      "retained": "02_Versiones_anteriores\\Presentacion_Gestion_Supermercado.pptx_20261107_205204_0000.pptx"
+    },
+    {
+      "removed_duplicate": "01_Documentos_vigentes_en_revision\\Project Charter Sistema Distribuido de Gestión de Supermercado_v1.1.pdf",
+      "retained": "02_Versiones_anteriores\\Project Charter Sistema Distribuido de Gestión de Supermercado_v1.1.pdf"
+    }
+  ],
+  "files": [
+    {
+      "name": "00_Control_Consolidacion_y_Trazabilidad_20261124.pdf",
+      "sha256": "181cd33e61a68a07df563061eab2c87447a7373e662f02003e857d2b10796757"
+    },
+    {
+      "name": "00_LEER_PRIMERO.txt",
+      "sha256": "d365cdc856796dad9f8306a09e1f77b8ca609ebd014800fd51020e3baddad60d"
+    },
+    {
+      "name": "GRUPO06_PRJ-012-A_Matriz_Requisitos_Disponibilidad_Recursos_v1.2.xlsx",
+      "sha256": "556ae644e9054352b079b7ab2ffd1a17304f4718be57f8160e41691e3a5d1aa3"
+    },
+    {
+      "name": "GRUPO06_PRJ-012-B_RBS_v1.2.docx",
+      "sha256": "28d182757c8ddea789311efad639e00bd7d30e264d311eb771c3c9d9825a1a24"
+    },
+    {
+      "name": "GRUPO06_PRJ-012-B_RBS_v1.2.pdf",
+      "sha256": "441672c521250ec70cdef309046890d243bf6fd1590de79a8b2d56733b18a6ce"
+    },
+    {
+      "name": "GRUPO06_PRJ-012_Plan_Gestion_Recursos_v1.3.docx",
+      "sha256": "d77dc920f0d371d2f73c4b2cb85b3bca9988b594a8a1005a73b2b485b67c97b2"
+    },
+    {
+      "name": "GRUPO06_PRJ-012_Plan_Gestion_Recursos_v1.3.pdf",
+      "sha256": "c6a0005fa6c48785e118f2d6bd7079059f65840b677b9ffa7dc6053983ec5cc1"
+    },
+    {
+      "name": "GRUPO06_PRJ-013-A_Matriz_Metricas_v1.3.xlsx",
+      "sha256": "1780bcf3de83cad872fa69167d5c9b3f3eb06ee9b8c5ea9b3a1b6f66fbef45f3"
+    },
+    {
+      "name": "GRUPO06_PRJ-013-B_Registro_Mediciones_v1.2.xlsx",
+      "sha256": "fe57968486fc5446e584e7dee60bcec58dc028702d4ca9715c55bde5951199a3"
+    },
+    {
+      "name": "GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.3.docx",
+      "sha256": "8a2580f64da4f4cc157229a377cedbe7baf81f56454604d8e16c37a3274495bd"
+    },
+    {
+      "name": "GRUPO06_PRJ-013_Plan_Medicion_Calidad_v1.3.pdf",
+      "sha256": "e0f7ca89a96255e0928547979cafb8dbe536fde1d6501e13cfc2ed711f5f2a40"
+    },
+    {
+      "name": "Presentacion_Gestion_Supermercado_v1.1.pdf",
+      "sha256": "fc732693b5187300a04a3b04cc8eac93f27bbc78c25e65291e51c7cca33b5806"
+    },
+    {
+      "name": "Presentacion_Gestion_Supermercado_v1.1.pptx",
+      "sha256": "a7cab4c919067201a53c8b9f9ba96c8ca8d36868df848a7d67dc5e73b3c893c0"
+    },
+    {
+      "name": "Project_Charter_Supermercado_v1.2.pdf",
+      "sha256": "96ad7321c5e17ddd42a1f373ce6368f2d9e4e2a941bfe567fdfe2ee0f7f26fb5"
+    }
+  ],
+  "verification": [
+    "ZIP CRC and extracted member hashes checked before deletion",
+    "M1/M2 cell values preserved exactly",
+    "Existing worksheet data validation counts preserved",
+    "No existing spreadsheet formulas (source files contain stored values)",
+    "DOCX exported through Word; PPTX opened and exported through PowerPoint",
+    "PDF page previews and new slides reviewed",
+    "No software tests rerun: source evidence remains historical"
+  ]
+}
